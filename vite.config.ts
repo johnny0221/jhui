@@ -20,4 +20,7 @@ export default defineConfig({
     },
     sourcemap: true,
   },
+  esbuild: {
+    jsx: 'automatic',
+  },
 });
