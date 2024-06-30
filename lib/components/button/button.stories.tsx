@@ -17,5 +17,15 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: 'Button',
+    color: 'primary',
+    size: 'md',
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    children: 'Button',
+    color: 'secondary',
+    size: 'md',
   },
 };
