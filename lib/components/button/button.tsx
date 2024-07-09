@@ -1,7 +1,10 @@
 import { forwardRef } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '../../utils';
-import { Button, ButtonProps as RAButtonProps } from 'react-aria-components';
+import {
+  Button as RAButton,
+  ButtonProps as RAButtonProps,
+} from 'react-aria-components';
 
 interface JhuiButtonProps {
   children?: React.ReactNode;
@@ -86,7 +89,7 @@ const buttonStyles = cva(['focus:outline-none', 'rounded-full', 'font-bold'], {
   },
 });
 
-const JhuiButton = forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       variant = 'primary',
@@ -99,7 +102,7 @@ const JhuiButton = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     return (
-      <Button
+      <RAButton
         ref={ref}
         className={cn(
           buttonStyles({ variant: variant, size: size, style, disabled })
@@ -107,9 +110,9 @@ const JhuiButton = forwardRef<HTMLButtonElement, ButtonProps>(
         isDisabled={disabled}
         {...props}>
         {children}
-      </Button>
+      </RAButton>
     );
   }
 );
 
-export default JhuiButton;
+export default Button;
